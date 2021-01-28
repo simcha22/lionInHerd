@@ -17,8 +17,9 @@ Route::get('/', function () {
     return view('template');
 });
 */
+//Route::view('/', 'template');
 
-
-Route::view('/', 'template');
-Route::view('/home', 'pages.home');
+Route::view('/', 'pages.home');
 Route::view('/about', 'pages.about');
+
+Route::get('/books', 'booksController@getBooks');

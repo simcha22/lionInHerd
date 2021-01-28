@@ -22,7 +22,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-peru">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ url('home') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         <img class="logo-img" src="{{ asset('images/logo.png') }}"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -32,7 +32,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-4 ">
                             <li class="nav-item mr-2 ">
-                                <a class="nav-link active" href="{{ url('home') }}">דף הבית</a>
+                                <a class="nav-link active" href="{{ url('/') }}">דף הבית</a>
                             </li>
                             <li class="nav-item mr-2">
                                 <a class="nav-link" href="{{ url('about') }}">אודות</a>
@@ -44,7 +44,7 @@
                                 <a class="nav-link" href="#">שידור חי</a>
                             </li>
                             <li class="nav-item mr-2">
-                                <a class="nav-link" href="#">ספרים</a>
+                                <a class="nav-link" href="{{url('books')}}">ספרים</a>
                             </li>
                             <li class="nav-item mr-2">
                                 <a class="nav-link" href="#">רבנים</a>
@@ -78,13 +78,14 @@
                 <div class="col-12 col-md text-center m-3">
                     <img class="w-50" src="{{ asset('images/logo.png') }}">
                     <div class="p-2 text-color">
-                        2021@ כל הזכויות שמורות למערכת ארזי הלבנון
+                        כל הזכויות שמורות למערכת ארזי הלבנון
                     </div>
+                <div>2021@</div>
                 </div>
                 <div class="col-6 col-md m-3">
                     <h5>עמודים</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a href="#">דף הבית</a></li>
+                        <li><a href="{{url('/')}}">דף הבית</a></li>
                         <li><a href="#">אודות</a></li>
                         <li><a href="#">שיעורים</a></li>
                         <li><a href="#">רבנים</a></li>
