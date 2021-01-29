@@ -21,5 +21,11 @@ Route::get('/', function () {
 
 Route::view('/', 'pages.home');
 Route::view('/about', 'pages.about');
+Route::view('/live', 'pages.live');
 
+//ספרים
 Route::get('/books', 'booksController@getBooks');
+
+//רבנים
+Route::get('/rabbis', 'RabbiController@getRabbis');
+

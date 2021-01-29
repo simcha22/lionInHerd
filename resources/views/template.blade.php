@@ -41,13 +41,13 @@
                                 <a class="nav-link" href="#">שיעורים ודרשות</a>
                             </li>
                             <li class="nav-item mr-2">
-                                <a class="nav-link" href="#">שידור חי</a>
+                                <a class="nav-link" href="{{url('live')}}">שידור חי</a>
                             </li>
                             <li class="nav-item mr-2">
                                 <a class="nav-link" href="{{url('books')}}">ספרים</a>
                             </li>
                             <li class="nav-item mr-2">
-                                <a class="nav-link" href="#">רבנים</a>
+                                <a class="nav-link" href="{{url('rabbis')}}">רבנים</a>
                             </li>
                             <li class="nav-item mr-2">
                                 <a class="nav-link" href="#">חדש</a>
@@ -86,9 +86,9 @@
                     <h5>עמודים</h5>
                     <ul class="list-unstyled text-small">
                         <li><a href="{{url('/')}}">דף הבית</a></li>
-                        <li><a href="#">אודות</a></li>
+                        <li><a href="{{url('about')}}">אודות</a></li>
                         <li><a href="#">שיעורים</a></li>
-                        <li><a href="#">רבנים</a></li>
+                        <li><a href="{{url('live')}}">שידור חי</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md m-3">

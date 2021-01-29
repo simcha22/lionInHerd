@@ -19,13 +19,18 @@ class CreateBooksTable extends Migration
             $table->string('title',100);
             $table->string('slug',100);
             $table->text('information');
+            //מחיר
             $table->integer('price');
+            //תמונה
+            $table->string('img_url',100);
             //כמות
             $table->integer('quantity');
             //הוצאה
             $table->string('expense',100);
             //כרכים
             $table->string('volumes',100);
+            //דירוג 
+            $table->string('rating',100);
             //קטגוריה ורב
             $table->integer('cet_id');
             $table->integer('rabbi_id');

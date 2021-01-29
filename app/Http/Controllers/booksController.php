@@ -8,6 +8,7 @@ use App\Book;
 class BooksController extends Controller
 {
     public function getBooks(){
-        return view('books.books');
+        $data['books'] = Book::getBooks();
+        return view('books.books', $data);
     }
 }
