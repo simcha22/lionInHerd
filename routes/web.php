@@ -20,12 +20,17 @@ Route::get('/', function () {
 //Route::view('/', 'template');
 
 Route::view('/', 'pages.home');
-Route::view('/about', 'pages.about');
-Route::view('/live', 'pages.live');
+Route::view('about', 'pages.about');
+Route::view('live', 'pages.live');
 
 //ספרים
-Route::get('/books', 'booksController@getBooks');
+Route::get('books', 'booksController@getBooks');
 
 //רבנים
-Route::get('/rabbis', 'RabbiController@getRabbis');
+Route::get('rabbis', 'RabbiController@getRabbis');
+//משתמשים
 
+Route::get('singup', 'UserController@displaySingup');
+Route::get('login', 'UserController@displayLogin');
+Route::get('contact-rabbi', 'UserController@displayContactRabbi');
+Route::get('contact-system', 'UserController@displayContactSystem');

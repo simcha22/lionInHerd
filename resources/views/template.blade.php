@@ -52,9 +52,6 @@
                             <li class="nav-item mr-2">
                                 <a class="nav-link" href="#">חדש</a>
                             </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link" href="#">צור קשר</a>
-                            </li>
                         </ul>
                         <form class="d-flex">
                             <input class="form-control me-2" type="search" placeholder=" חיפוש שיעור"
@@ -89,6 +86,9 @@
                         <li><a href="{{url('about')}}">אודות</a></li>
                         <li><a href="#">שיעורים</a></li>
                         <li><a href="{{url('live')}}">שידור חי</a></li>
+                        <li><a href="{{url('login')}}">כניסה</a></li>
+                        <li><a href="{{url('singup')}}">הרשמה</a></li>
+                        <li><a href="#">מערכת ניהול</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md m-3">
@@ -125,8 +125,8 @@
                 <div class="col-6 col-md m-3">
                     <h5>צור קשר</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a href="#">שאלה לרב</a></li>
-                        <li><a href="#">פניה למערכת</a></li>
+                        <li><a href="{{url('contact-rabbi')}}">שאלה לרב</a></li>
+                        <li><a href="{{url('contact-system')}}">פניה למערכת</a></li>
                     </ul>
                 </div>
             </div>
