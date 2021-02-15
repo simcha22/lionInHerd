@@ -30,7 +30,11 @@ Route::get('books', 'booksController@getBooks');
 Route::get('rabbis', 'RabbiController@getRabbis');
 //משתמשים
 
-Route::get('singup', 'UserController@displaySingup');
+Route::get('signup', 'UserController@displaySignup');
+Route::post('signup', 'UserController@processSignup');
+
 Route::get('login', 'UserController@displayLogin');
+Route::post('login', 'UserController@processLogin');
+
 Route::get('contact-rabbi', 'UserController@displayContactRabbi');
 Route::get('contact-system', 'UserController@displayContactSystem');
