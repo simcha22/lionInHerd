@@ -7,9 +7,6 @@
 
     <title>ארי שבחבורה</title>
 
-    <!-- Fonts -->
-
-    <!-- Styles -->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -35,7 +32,7 @@
                                 <a class="nav-link" href="{{ url('about') }}">אודות</a>
                             </li>
                             <li class="nav-item mr-2">
-                                <a class="nav-link" href="#">שיעורים ודרשות</a>
+                                <a class="nav-link" href="{{url('lessons')}}">שיעורים ודרשות</a>
                             </li>
                             <li class="nav-item mr-2">
                                 <a class="nav-link" href="{{url('live')}}">שידור חי</a>
@@ -82,11 +79,11 @@
                     <ul class="list-unstyled text-small">
                         <li><a href="{{url('/')}}">דף הבית</a></li>
                         <li><a href="{{url('about')}}">אודות</a></li>
-                        <li><a href="#">שיעורים</a></li>
+                        <li><a href="{{url('lessons')}}">שיעורים</a></li>
                         <li><a href="{{url('live')}}">שידור חי</a></li>
                         <li><a href="{{url('login')}}">כניסה</a></li>
                         <li><a href="{{url('signup')}}">הרשמה</a></li>
-                        <li><a href="#">מערכת ניהול</a></li>
+                        <li><a href="{{url('admin')}}">מערכת ניהול</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md m-3">

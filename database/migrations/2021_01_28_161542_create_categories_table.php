@@ -19,7 +19,11 @@ class CreateCategoriesTable extends Migration
             $table->string('title',100);
             $table->string('slug',100);
             //איזה סוג קטגוריה אם ראשונה או שנייה
+            $table->string('type_cat',100);
+            //שיכות לשיעורים או לספרים
+            //רק קטגוריות ראשונות
             $table->string('type',100);
+
             //שיוך לקטגוריות אחרות
             $table->integer('cet_id');
             $table->text('information');

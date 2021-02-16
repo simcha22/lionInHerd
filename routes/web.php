@@ -22,19 +22,23 @@ Route::get('/', function () {
 Route::view('/', 'pages.home');
 Route::view('about', 'pages.about');
 Route::view('live', 'pages.live');
-
+//שיעורים ודרשות
+Route::get('lessons', 'categoryController@displayCategoryLessons');
 //ספרים
 Route::get('books', 'booksController@getBooks');
 
 //רבנים
 Route::get('rabbis', 'RabbiController@getRabbis');
-//משתמשים
 
+//משתמשים
 Route::get('signup', 'UserController@displaySignup');
 Route::post('signup', 'UserController@processSignup');
 
 Route::get('login', 'UserController@displayLogin');
 Route::post('login', 'UserController@processLogin');
 
+//צור קשר
 Route::get('contact-rabbi', 'UserController@displayContactRabbi');
 Route::get('contact-system', 'UserController@displayContactSystem');
+
+Route::view('admin', 'admin.main');
