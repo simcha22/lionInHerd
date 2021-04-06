@@ -14,13 +14,15 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',100);
-            $table->string('email',100);
-            $table->string('password',100);
-            $table->string('role_id',100);
+            $table->uuid('user_id')->primary();
+            $table->string('user_firstname',100);
+            $table->string('user_email',100)->unique();
+            $table->string('user_password',100);
             $table->boolean('approval');
             $table->timestamps();
+        });
+        Schema::table('users', function($table){
+            $table->foreignUuid('role_id')->after('user_id')->nullable()->references('role_id')->on('roles');
         });
     }
 

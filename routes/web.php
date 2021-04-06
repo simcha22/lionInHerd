@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::view('/', 'pages.home');
 Route::view('about', 'pages.about');
-Route::view('live', 'pages.live');
+Route::get('live', 'LiveController@getLive');
 //שיעורים ודרשות
 Route::get('lessons', 'categoryController@displayCategoryLessons');
 //ספרים

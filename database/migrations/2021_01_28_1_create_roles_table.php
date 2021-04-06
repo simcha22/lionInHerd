@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRabbisTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateRabbisTable extends Migration
      */
     public function up()
     {
-        Schema::create('rabbis', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',100);
-            $table->string('title',100);
-            $table->string('slug',100);
-            $table->string('img_url',100);
-            $table->text('information');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->uuid('role_id')->primary();
+            $table->string('role_name',100);
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateRabbisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rabbis');
+        Schema::dropIfExists('roles');
     }
 }

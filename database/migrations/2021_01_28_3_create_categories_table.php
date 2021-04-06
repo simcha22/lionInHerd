@@ -14,19 +14,15 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',100);
-            $table->string('title',100);
-            $table->string('slug',100);
+            $table->uuid('category_id')->primary();
+            $table->string('category_name',100);
+            $table->string('category_title',100);
+            $table->string('category_slug',100);
             //איזה סוג קטגוריה אם ראשונה או שנייה
-            $table->string('type_cat',100);
-            //שיכות לשיעורים או לספרים
-            //רק קטגוריות ראשונות
-            $table->string('type',100);
 
-            //שיוך לקטגוריות אחרות
-            $table->integer('cet_id');
-            $table->text('information');
+            $table->string('category_type',100);
+            $table->text('category_information');
+            $table->string('category_image_url',100);
             $table->timestamps();
         });
     }
