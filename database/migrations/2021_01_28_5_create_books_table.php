@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('book_name',100);
             $table->string('book_title',100);
             $table->string('book_slug',100);
+            $table->string('book_nicname',100);
             $table->text('book_information');
             //מחיר
             $table->float('book_price',8,2);
@@ -31,7 +32,10 @@ class CreateBooksTable extends Migration
             $table->string('book_volumes',100);
             //דירוג 
             $table->string('book_rating',100);
+            //לייקים
+            $table->integer('book_likes');
             //תאריך
+            $table->string('book_production_data');
             $table->timestamps();
         });
 

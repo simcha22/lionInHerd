@@ -22,6 +22,10 @@ class CreateRabbisTable extends Migration
             $table->text('rabbi_information');
             $table->timestamps();
         });
+        
+        Schema::table('rabbis', function($table){
+            $table->foreignUuid('user_id')->after('rabbi_id')->nullable()->references('user_id')->on('users');
+        });
     }
 
     /**
