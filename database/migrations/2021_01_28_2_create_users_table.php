@@ -15,14 +15,14 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->uuid('user_id')->primary();
-            $table->string('user_firstname',100);
-            $table->string('user_lastname',100);
-            $table->string('user_email',100)->unique();
-            $table->string('user_password',100);
-            $table->boolean('approval');
+            $table->string('user_firstname',100)->comment('שם פרטי');
+            $table->string('user_lastname',100)->comment('שם משפחה');
+            $table->string('user_email',100)->unique()->comment('כתובת מייל');
+            $table->string('user_password',100)->comment('סיסמא');
+            $table->boolean('approval')->comment('מאשר לקבל עדכונים למייל');
 
-            $table->integer('phone',12);
-            $table->string('address',200);
+            $table->integer('phone')->nullable()->comment('טלפון');
+            $table->string('address',200)->nullable()->comment('כתובת');
             $table->timestamps();
         });
         Schema::table('users', function($table){

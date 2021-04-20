@@ -15,5 +15,9 @@ class CategoryController extends Controller
     public function displayCategoryBooks(){
         // $date['category'] = Category::getCategoryByType("books");
         // return view('');
-     }
+    }
+
+    public function store(Request $request){
+        Category::create($request->all());
+    }
 }

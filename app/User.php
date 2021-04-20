@@ -12,14 +12,14 @@ class User extends Model
     }
 
     public static function loginUser($request){
-        $user = self::where('email', $request->email)->first();
-        if(!$user || !Hash::check($request->password, $user->password)){
+        $user = self::where('user_email', $request->email)->first();
+        if(!$user || !Hash::check($request->password, $user->user_password)){
             return false;
         }
         session([
-            'name' => $user->name,
+            'name' => $user->user_firstname. ' '. $user->user_lastname,
             'role' => $user->role_id,
-            'id' => $user->id
+            'id' => $user->user_id
         ]);
         return true;
     }
@@ -27,9 +27,11 @@ class User extends Model
     public static function store($request)
     {
         $user = new self();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user->user_id = Str::uuid();
+        $user->user_firstname = $request->firstname;
+        $user->user_lastname = $request->lastname;
+        $user->user_email = $request->email;
+        $user->user_password = bcrypt($request->password);
         $user->approval = $request->approval;
         $user->role_id = $request->role_id ?? 35;
         $user->save();

@@ -10,8 +10,8 @@ class UserSignup extends FormRequest
     {
         return [
             'name'=>'Required|min:4|max:90',
-            'email' => 'Required|email',
-            'password' => 'Required|min:4|confirmed',
+            'email' => 'Required|email|unique:users,user_email',
+            'password' => 'Required|min:4',
             'role'=>'sometimes|integer|exists:roles,id',
         ];
     }
@@ -23,7 +23,6 @@ class UserSignup extends FormRequest
             'email.required' => 'אנא הקלד אימייל',
             'password.required' => 'אנא הקלד סיסמא חזקה',
             'password.min' => 'הסיסמא חייבת להיות לפחות 4 תוים',
-            'password.confirmed' => 'אנא הקלד סיסמא תואמת',
         ];
     }
 }

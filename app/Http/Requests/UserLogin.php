@@ -9,7 +9,7 @@ class UserLogin extends FormRequest
     public function rules()
     {
         return [
-            'email'=>'Required|email',
+            'email'=>'Required|email|exists:Users,user_email',
             'password' => 'Required|min:4'
         ];
     }
