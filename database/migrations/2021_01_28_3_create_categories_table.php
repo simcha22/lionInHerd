@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->uuid('category_id')->primary();
             $table->string('category_name',100);
             $table->string('category_title',100);
-            $table->string('category_slug',100);
+            $table->string('category_slug',100)->unique();
             //איזה סוג קטגוריה אם ראשונה או שנייה
 
             $table->string('category_type',100);

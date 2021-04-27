@@ -18,7 +18,7 @@ class CreateLinksTable extends Migration
             $table->uuid('link_id')->primary();
             $table->string('link_name');
             $table->string('link_title');
-            $table->string('link_slug_to');
+            $table->string('link_slug_to')->unique();
             $table->enum('link_type',['main','second','third']);
             $table->timestamps();
         });

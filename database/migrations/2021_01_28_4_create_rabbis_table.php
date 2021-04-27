@@ -18,7 +18,7 @@ class CreateRabbisTable extends Migration
             $table->uuid('rabbi_id')->primary();
             $table->string('rabbi_name',100);
             $table->string('rabbi_title',100);
-            $table->string('rabbi_slug',100);
+            $table->string('rabbi_slug',100)->unique();
             $table->string('rabbi_image_url',100);
             $table->text('rabbi_information');
             $table->timestamps();

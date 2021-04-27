@@ -18,7 +18,7 @@ class CreateLessonsTable extends Migration
             $table->uuid('lesson_id')->primary();
             $table->string('lesson_name', 100);
             $table->string('lesson_title', 100);
-            $table->string('lesson_slug', 100);
+            $table->string('lesson_slug', 100)->unique();
             $table->string('lesson_type', 100);
 
             //שפת השיעור

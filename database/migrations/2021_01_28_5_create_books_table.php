@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->uuid('book_id')->primary();
             $table->string('book_name',100);
             $table->string('book_title',100);
-            $table->string('book_slug',100);
+            $table->string('book_slug',100)->unique();
             $table->string('book_nicname',100);
             $table->text('book_information');
             //מחיר
