@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LessonCrudController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -14,10 +15,16 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::get('/lessons', [LessonCrudController::class, 'index']);
+Route::post('/lessons/create', [LessonCrudController::class, 'store']);
+Route::get('/lesson/{id}', [LessonCrudController::class, 'show']);
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('signup', [UserController::class, 'processSignup']);
-Route::post('login', [UserController::class, 'processLogin']);
+
+
+// Route::post('signup', [UserController::class, 'processSignup']);
+// Route::post('login', [UserController::class, 'processLogin']);

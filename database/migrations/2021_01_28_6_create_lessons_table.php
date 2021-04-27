@@ -30,9 +30,9 @@ class CreateLessonsTable extends Migration
             $table->integer('lesson_duration');
             $table->integer('lesson_likes');
             //קישורים לצפייה
-            $table->string('lesson_image_url', 200);
-            $table->string('lesson_audio_url', 200);
-            $table->string('lesson_video_url', 200);
+            $table->string('lesson_image_url', 200)->nullable();
+            $table->string('lesson_audio_url', 200)->nullable();
+            $table->string('lesson_video_url', 200)->nullable();
             
             $table->timestamps();
         });
