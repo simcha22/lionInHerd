@@ -14,7 +14,8 @@ class CreateLikesTable extends Migration
     public function up()
     {
         Schema::create('likes', function (Blueprint $table) {
-            $table->uuid('like_id');
+            $table->engine = 'InnoDB';
+            $table->uuid('like_id')->primary();
             $table->string('like_type');
             $table->timestamps();
         });
@@ -31,6 +32,8 @@ class CreateLikesTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('likes');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

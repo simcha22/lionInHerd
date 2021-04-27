@@ -14,6 +14,7 @@ class CreateRabbisTable extends Migration
     public function up()
     {
         Schema::create('rabbis', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->uuid('rabbi_id')->primary();
             $table->string('rabbi_name',100);
             $table->string('rabbi_title',100);
@@ -35,6 +36,8 @@ class CreateRabbisTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('rabbis');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

@@ -14,7 +14,8 @@ class CreateLinksTable extends Migration
     public function up()
     {
         Schema::create('links', function (Blueprint $table) {
-            $table->uuid('link_id');
+            $table->engine = 'InnoDB';
+            $table->uuid('link_id')->primary();
             $table->string('link_name');
             $table->string('link_title');
             $table->string('link_slug_to');
@@ -30,6 +31,9 @@ class CreateLinksTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('links');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
     }
 }

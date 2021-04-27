@@ -14,6 +14,7 @@ class CreateLessonsTable extends Migration
     public function up()
     {
         Schema::create('lessons', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->uuid('lesson_id')->primary();
             $table->string('lesson_name', 100);
             $table->string('lesson_title', 100);
@@ -50,6 +51,8 @@ class CreateLessonsTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('lessons');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

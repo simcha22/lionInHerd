@@ -14,11 +14,12 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->uuid('comment_id');
+            $table->engine = 'InnoDB';
+            $table->uuid('comment_id')->primary();
             $table->string('commant_title');
             $table->timestamps();
         });
-        Schema::table('commants', function($table){
+        Schema::table('comments', function($table){
             $table->foreignUuid('user_id')->after('comment_id')->nullable()->references('user_id')->on('users');
         });
         
@@ -31,6 +32,8 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comment');
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Schema::dropIfExists('comments');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

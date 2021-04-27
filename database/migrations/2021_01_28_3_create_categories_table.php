@@ -14,6 +14,7 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->uuid('category_id')->primary();
             $table->string('category_name',100);
             $table->string('category_title',100);
@@ -34,6 +35,8 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('categories');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

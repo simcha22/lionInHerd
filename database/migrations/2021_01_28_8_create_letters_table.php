@@ -14,7 +14,8 @@ class CreateLettersTable extends Migration
     public function up()
     {
         Schema::create('letters', function (Blueprint $table) {
-            $table->uuid('letter_id');
+            $table->engine = 'InnoDB';
+            $table->uuid('letter_id')->primary();
             $table->string('letter_sender');
             $table->string('letter_getting');
             $table->string('letter_title');
@@ -36,6 +37,9 @@ class CreateLettersTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('letters');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
     }
 }

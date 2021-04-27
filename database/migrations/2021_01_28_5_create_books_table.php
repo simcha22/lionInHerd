@@ -14,6 +14,7 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->uuid('book_id')->primary();
             $table->string('book_name',100);
             $table->string('book_title',100);
@@ -53,6 +54,8 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('books');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

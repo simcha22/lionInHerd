@@ -14,6 +14,7 @@ class CreateRolesTable extends Migration
     public function up()
     {
         Schema::create('roles', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->uuid('role_id')->primary();
             $table->string('role_name',100);
             $table->timestamps();
@@ -27,6 +28,8 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('roles');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }
