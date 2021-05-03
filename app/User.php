@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class User extends Model
 {
@@ -11,20 +12,24 @@ class User extends Model
         return $this->belongsTo('App\Role');
     }
 
-    public static function loginUser($request){
-        $user = self::where('user_email', $request->email)->first();
-        if(!$user || !Hash::check($request->password, $user->user_password)){
-            return false;
-        }
-        session([
-            'name' => $user->user_firstname. ' '. $user->user_lastname,
-            'role' => $user->role_id,
-            'id' => $user->user_id
-        ]);
-        return true;
+    public static function getAll(){
+        return self::orderBy("user_id")->get();
     }
 
-    public static function store($request)
+    // public static function loginUser($request){
+    //     $user = self::where('user_email', $request->email)->first();
+    //     if(!$user || !Hash::check($request->password, $user->user_password)){
+    //         return false;
+    //     }
+    //     session([
+    //         'name' => $user->user_firstname. ' '. $user->user_lastname,
+    //         'role' => $user->role_id,
+    //         'id' => $user->user_id
+    //     ]);
+    //     return true;
+    // }
+
+    public static function create($request)
     {
         $user = new self();
         $user->user_id = Str::uuid();

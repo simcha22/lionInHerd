@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\LessonCrudController;
 use App\Http\Controllers\CategoryCrudController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,6 +24,9 @@ Route::get('/lesson/{id}', [LessonCrudController::class, 'show']);
 Route::get('/categories',[CategoryCrudController::class, 'index']);
 Route::post('/categories/create',[CategoryCrudController::class, 'store']);
 Route::get('/category/{id}',[CategoryCrudController::class, 'show']);
+
+Route::get('/users', [UserController::class, 'index']);
+Route::post('/users/create', [UserController::class, 'store']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
