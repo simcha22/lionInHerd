@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('user_lastname',100)->comment('שם משפחה');
             $table->string('user_email',100)->unique()->comment('כתובת מייל');
             $table->string('user_password',100)->comment('סיסמא');
-            $table->boolean('approval')->comment('מאשר לקבל עדכונים למייל');
+            $table->boolean('approval')->nullable()->comment('מאשר לקבל עדכונים למייל');
 
             $table->integer('phone')->nullable()->comment('טלפון');
             $table->string('address',200)->nullable()->comment('כתובת');
