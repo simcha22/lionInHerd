@@ -3,6 +3,7 @@
 use App\Http\Controllers\LessonCrudController;
 use App\Http\Controllers\CategoryCrudController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BooksController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,9 @@ Route::get('/lesson/{id}', [LessonCrudController::class, 'show']);
 Route::get('/categories',[CategoryCrudController::class, 'index']);
 Route::post('/categories/create',[CategoryCrudController::class, 'store']);
 Route::get('/category/{id}',[CategoryCrudController::class, 'show']);
+
+Route::get('/books', [BooksController::class , 'index']);
+Route::post('/books/create', [BooksController::class , 'store']);
 
 Route::get('/users', [UserController::class, 'index']);
 Route::post('/users/create', [UserController::class, 'store']);
