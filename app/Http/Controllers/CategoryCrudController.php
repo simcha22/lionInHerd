@@ -36,7 +36,7 @@ class CategoryCrudController extends Controller
      */
     public function show($id)
     {
-        //
+        return Category::getCategory($id);
     }
 
     /**

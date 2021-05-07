@@ -27,4 +27,8 @@ class Category extends Model
         $category->category_image_url = $request->image_url; //שמירת כתובת התמונה ושמירת הקובץ 
         $category->save();
     }
+
+    public static function getCategory($id){
+        return self::where('category_id', $id)->firstOrFail();
+    }
 }

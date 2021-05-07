@@ -4,6 +4,7 @@ use App\Http\Controllers\LessonCrudController;
 use App\Http\Controllers\CategoryCrudController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\RabbiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,11 @@ Route::get('/category/{id}',[CategoryCrudController::class, 'show']);
 
 Route::get('/books', [BooksController::class , 'index']);
 Route::post('/books/create', [BooksController::class , 'store']);
+Route::get('/book/{id}', [BooksController::class , 'show']);
+
+Route::get('/rabbis', [RabbiController::class, 'index']);
+Route::post('/rabbis/create', [RabbiController::class, 'store']);
+Route::get('/rabbi/{id}', [RabbiController::class, 'show']);
 
 Route::get('/users', [UserController::class, 'index']);
 Route::post('/users/create', [UserController::class, 'store']);

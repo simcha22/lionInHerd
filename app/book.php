@@ -30,4 +30,7 @@ class Book extends Model
         $book->book_production_data = $request->profuction;
         $book->save();
     }
+    public static function getBook($id){
+        return self::where('book_id', $id)->firstOrFail();
+    }
 }

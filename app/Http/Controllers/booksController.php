@@ -16,4 +16,9 @@ class BooksController extends Controller
     public function store(BookRequest $request){
         Book::create($request);
     }
+
+    public function show($id)
+    {
+        return Book::getBook($id);
+    }
 }

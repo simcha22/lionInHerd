@@ -6,25 +6,23 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class BookRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
-            //
+            'category'=> 'required|exists:categories,category_id',
+            'rabbi'=> 'required|exists:rabbis,rabbi_id',
+            'title' => 'required|min:2',
+            'slug' => 'required|min:2|unique:books,book_slug',
+            'name' => 'required|min:2|string',
+            'nicname' => 'required|min:2',
+            'price' => 'required|integer',
+            //'image' => 'file',
+            'quantity' => 'required',
+            'expense' => 'required',
+            'volumes' => 'required',
+            'rating' => 'required',
+            'likes' => 'required',
+            'profuction' => 'required|date',
         ];
     }
 }
