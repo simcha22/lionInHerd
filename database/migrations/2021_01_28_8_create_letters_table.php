@@ -20,7 +20,7 @@ class CreateLettersTable extends Migration
             $table->string('letter_getting');
             $table->string('letter_title');
             $table->text('letter_information');
-            $table->text('letter_answer');
+            $table->text('letter_answer')->nullable();
             $table->timestamps();
         });
         Schema::table('letters', function($table){

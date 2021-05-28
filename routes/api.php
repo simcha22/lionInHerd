@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LessonCrudController;
+use App\Http\Controllers\LetterController;
 use App\Http\Controllers\CategoryCrudController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BooksController;
@@ -34,6 +35,10 @@ Route::get('/book/{id}', [BooksController::class , 'show']);
 Route::get('/rabbis', [RabbiController::class, 'index']);
 Route::post('/rabbis/create', [RabbiController::class, 'store']);
 Route::get('/rabbi/{id}', [RabbiController::class, 'show']);
+
+Route::get('/letters', [LetterController::class,'index']);
+Route::get('/letters/create', [LetterController::class,'store']);
+Route::get('/letter{id}', [LetterController::class,'show']);
 
 Route::get('/users', [UserController::class, 'index']);
 Route::post('/users/create', [UserController::class, 'store']);
