@@ -41,4 +41,17 @@ class User extends Model
         $user->role_id = $request->role_id ?? 35;
         $user->save();
     }
+    public static function login($request){
+
+        $user = self::where('user_email', $request->email)->firstOrFail();
+        if(!$user || !Hash::check($request->password, $user->user_password)){
+                    return false;
+                }
+                session([
+                    'name' => $user->user_firstname. ' '. $user->user_lastname,
+                    'role' => $user->role_id,
+                    'id' => $user->user_id
+                ]);
+                return $user;
+    }
 }

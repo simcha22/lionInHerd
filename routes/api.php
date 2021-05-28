@@ -37,6 +37,7 @@ Route::get('/rabbi/{id}', [RabbiController::class, 'show']);
 
 Route::get('/users', [UserController::class, 'index']);
 Route::post('/users/create', [UserController::class, 'store']);
+Route::post('/user/login', [UserController::class, 'login']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

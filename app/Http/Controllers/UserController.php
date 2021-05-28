@@ -16,6 +16,12 @@ class UserController extends Controller
     public function store(UserSignup $request){
         return User::create($request);
     }
+
+    public function login(UserLogin $request){
+        $user = User::login($request);
+        $user = json_decode($user, true);
+        return $user;
+    }
     // public function displaySignup()
     // {
     //     return view('users.signup');

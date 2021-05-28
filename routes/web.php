@@ -19,7 +19,7 @@ Route::get('/', function () {
 */
 //Route::view('/', 'template');
 
-Route::view('/', 'pages.home');
+//Route::view('/', 'pages.home');
 // Route::view('about', 'pages.about');
 // Route::get('live', 'LiveController@getLive');
 // //שיעורים ודרשות
